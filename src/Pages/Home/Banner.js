@@ -4,7 +4,7 @@ import PrimaryButton from '../Shared/PrimaryButton';
 import './Banner.css';
 const Banner = () => {
     return (
-        <div className="hero min-h-screen banner bg-gray-200">
+        <div className="hero min-h-screen banner px-20">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <img src={chair} />
                 <div>

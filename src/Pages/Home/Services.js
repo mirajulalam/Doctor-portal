@@ -25,7 +25,7 @@ const Services = () => {
         }
     ];
     return (
-        <div className='my-28'>
+        <div className='my-28 max-w-7xl mx-auto px-12'>
             <div className='text-center'>
                 <h3 className='text-secondary text-2xl font-semibold 		 uppercase'>Our Services</h3>
                 <h2 className='text-5xl mt-3 mb-14'>Services We Provide</h2>
