@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import auth from '../../firebase.init';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
@@ -13,6 +13,9 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
+        auth
+    );
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -28,13 +31,25 @@ const Login = () => {
     if (error || gError) {
         errorMessage = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
     }
-    if (loading || gLoading) {
+    if (loading || gLoading || sending) {
         return <Loading></Loading>
     }
 
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)
     };
+
+    const resetPassword = async (data) => {
+        const email = data.email?.value;
+        console.log(email);
+        if (email) {
+            await sendPasswordResetEmail(email);
+
+        }
+        else {
+
+        }
+    }
     return (
         <div className='flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -83,11 +98,16 @@ const Login = () => {
                                     }
                                 })}
                             />
+                            <label class="label">
+                                <span onClick={resetPassword} class="label-text-alt">Forgot Password?</span>
+                            </label>
                             <label className="label">
                                 {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                                 {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                             </label>
+
                         </div>
+
                         {errorMessage}
                         <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
                     </form>

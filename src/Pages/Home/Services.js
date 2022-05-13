@@ -8,19 +8,19 @@ const Services = () => {
         {
             _id: 1,
             name: 'Fluoride Treatment',
-            description: '',
+            description: "It's been an essential oral health treatment for decades.",
             img: treatment
         },
         {
             _id: 2,
             name: 'Cavity Filling',
-            description: '',
+            description: "The dentist applies a numbing gel to the gums.",
             img: filling
         },
         {
             _id: 3,
             name: 'Teeth Whitening',
-            description: '',
+            description: "Professional whitening can be done in a dentist's office in about an hour.",
             img: whitening
         }
     ];

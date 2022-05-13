@@ -9,7 +9,7 @@ const Service = ({ service }) => {
             </figure>
             <div className="card-body items-center text-center">
                 <h2 className="card-title">{name}</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <p>{description}</p>
 
             </div>
         </div>

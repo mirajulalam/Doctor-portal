@@ -9,21 +9,21 @@ const Testimonials = () => {
         {
             _id: 1,
             name: 'Winson Herry',
-            reviewDes: 'It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content',
+            reviewDes: "There are many benefits to undergoing a fluoride treatment. They include: Reducing cavities by eliminating bacteria that cause decay. It strengthens the enamel of developing teeth, making them better resistant to decay for their lifespan.",
             location: 'California',
             img: people1
         },
         {
             _id: 2,
-            name: 'Winson Herry',
-            reviewDes: 'It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content',
+            name: 'Mary',
+            reviewDes: "A great dentist understands that a patient needs to feel in control of his or her treatment. Honesty and Compassion: A good dentist is also honest and compassionate. Dental problems can affect many areas of a person's life, and dentists need to be sensitive to the problems caused by poor dental health.",
             location: 'California',
             img: people2
         },
         {
             _id: 3,
-            name: 'Winson Herry',
-            reviewDes: 'It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content',
+            name: 'Jennifer',
+            reviewDes: "Professional teeth whiteners are safe, effective, and done under the supervision of a dental professional. In most cases, it is worth the extra cost to visit the dentist to get long-lasting, safe results. Yes, teeth whitening is very safe when done correctly.",
             location: 'California',
             img: people3
         },
