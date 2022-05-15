@@ -3,7 +3,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
-const BookingModal = ({ date, treatment, setTreatment }) => {
+const BookingModal = ({ date, treatment, setTreatment, refetch }) => {
     const { _id, name, slots } = treatment;
     const [user, loading, error] = useAuthState(auth);
     const formatedDate = format(date, 'PP')
@@ -21,8 +21,8 @@ const BookingModal = ({ date, treatment, setTreatment }) => {
             patient: user.email,
             patientName: user.displayName,
             phone: event.target.phone.value
-
         }
+        console.log(booking);
 
         fetch('http://localhost:5000/booking', {
             method: "POST",
@@ -40,6 +40,7 @@ const BookingModal = ({ date, treatment, setTreatment }) => {
                 else {
                     toast.error(`Already have an appointment on${data.booking?.date}at ${data.booking?.slot}`)
                 }
+                refetch();
                 setTreatment(null)
             })
     }
