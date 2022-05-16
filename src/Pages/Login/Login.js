@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import useToken from './../../hooks/useToken';
+import { toast } from 'react-toastify';
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit, getValues } = useForm();
@@ -42,15 +43,15 @@ const Login = () => {
         signInWithEmailAndPassword(data.email, data.password)
     };
 
-    const resetPassword = async (data) => {
+    const resetPassword = async () => {
         const email = getValues('email')
         console.log(email);
         if (email) {
             await sendPasswordResetEmail(email);
-
+            toast('Sent email');
         }
         else {
-
+            toast('please enter your email address')
         }
     }
     return (
@@ -102,7 +103,7 @@ const Login = () => {
                                 })}
                             />
                             <label className="label">
-                                <span onClick={resetPassword} className="label-text-alt">Forgot Password?</span>
+                                <span onClick={resetPassword} className="label-text-alt cursor-pointer">Forgot Password?</span>
                             </label>
                             <label className="label">
                                 {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
