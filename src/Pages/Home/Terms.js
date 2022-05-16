@@ -6,7 +6,7 @@ const Terms = () => {
         <section className='max-w-7xl mx-auto px-12'>
             <div className="flex justify-center items-center my-40 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
                 <div className='flex-1 justify-center '>
-                    <img className='w-8/12 rounded-lg mx-20' src={thretment} alt="" />
+                    <img data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000" className='w-8/12 rounded-lg mx-20' src={thretment} alt="" />
                 </div>
                 <div className='flex-1 align-middle'>
                     <h1 className='text-3xl pt-4 font-extrabold'>Exceptional Dental Care, on Your Terms</h1>

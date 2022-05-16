@@ -7,7 +7,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import useToken from './../../hooks/useToken';
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit, getValues } = useForm();
     const [
         signInWithEmailAndPassword,
         user,
@@ -43,7 +43,7 @@ const Login = () => {
     };
 
     const resetPassword = async (data) => {
-        const email = data.email?.value;
+        const email = getValues('email')
         console.log(email);
         if (email) {
             await sendPasswordResetEmail(email);
@@ -54,7 +54,7 @@ const Login = () => {
         }
     }
     return (
-        <div className='flex h-screen justify-center items-center'>
+        <div className='flex justify-center items-center mt-8'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center font-bold text-2xl">Login</h2>
@@ -101,8 +101,8 @@ const Login = () => {
                                     }
                                 })}
                             />
-                            <label class="label">
-                                <span onClick={resetPassword} class="label-text-alt">Forgot Password?</span>
+                            <label className="label">
+                                <span onClick={resetPassword} className="label-text-alt">Forgot Password?</span>
                             </label>
                             <label className="label">
                                 {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
