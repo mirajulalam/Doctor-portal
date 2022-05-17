@@ -11,8 +11,8 @@ const Banner = () => {
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
             objectPosition: 'center'
-        }} className="hero min-h-screen px-20">
-            <div className="hero-content flex-col lg:flex-row-reverse">
+        }} className="hero min-h-screen px-20 bg-base-200">
+            <div className="hero-content flex-col lg:flex-row-reverse ">
                 <img data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000" className='w-full lg:w-1/2' src={chair} alt="" />
                 <div >
                     <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200" className="text-5xl font-bold">Your New Smile Starts Here</h1>

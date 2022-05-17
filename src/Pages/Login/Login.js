@@ -8,7 +8,7 @@ import useToken from './../../hooks/useToken';
 import { toast } from 'react-toastify';
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-    const { register, formState: { errors }, handleSubmit, getValues } = useForm();
+    const { register, formState: { errors }, handleSubmit, getValues, reset } = useForm();
     const [
         signInWithEmailAndPassword,
         user,
@@ -40,7 +40,8 @@ const Login = () => {
     }
 
     const onSubmit = data => {
-        signInWithEmailAndPassword(data.email, data.password)
+        signInWithEmailAndPassword(data.email, data.password);
+        reset();
     };
 
     const resetPassword = async () => {
