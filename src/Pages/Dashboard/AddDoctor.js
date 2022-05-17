@@ -38,6 +38,7 @@ const AddDoctor = () => {
                         specialty: data.specialty,
                         img: img
                     }
+                    console.log(doctor);
                     // send to your database
                     const url = 'http://localhost:5000/doctor';
                     fetch(url, {
@@ -50,6 +51,7 @@ const AddDoctor = () => {
                     })
                         .then(res => res.json())
                         .then(inserted => {
+                            console.log(inserted);
                             if (inserted.insertedId) {
                                 toast.success('Doctor Added Successfully')
                                 reset()
@@ -116,7 +118,7 @@ const AddDoctor = () => {
                     <label className="label">
                         <span className="label-text">Specialty</span>
                     </label>
-                    <select {...register('Specialty')} class="select input-bordered w-full max-w-xs">
+                    <select {...register('specialty')} class="select input-bordered w-full max-w-xs">
                         {
                             services.map(service => <option
                                 key={service._id}
