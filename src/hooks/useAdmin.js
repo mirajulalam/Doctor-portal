@@ -7,7 +7,7 @@ const useAdmin = user => {
         const email = user?.email;
         console.log(email);
         if (email) {
-            fetch(`https://agile-escarpment-54026.herokuapp.com/admin/${email}`, {
+            fetch(`https://doctor-portal-6063.up.railway.app/admin/${email}`, {
                 method: 'GET',
                 headers: {
                     'content-type': 'application/json',

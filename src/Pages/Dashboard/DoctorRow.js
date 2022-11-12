@@ -4,8 +4,6 @@ import { toast } from 'react-toastify';
 const DoctorRow = ({ doctor, index, refetch, setDeletingDoctor }) => {
     const { name, specialty, img, email } = doctor;
 
-
-
     return (
         <tr>
             <th>{index + 1}</th>

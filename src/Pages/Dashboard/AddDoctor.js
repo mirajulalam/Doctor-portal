@@ -7,7 +7,7 @@ import Loading from '../Shared/Loading';
 const AddDoctor = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
-    const { data: services, isLoading } = useQuery('services', () => fetch('http://localhost:5000/service').then(res => res.json()))
+    const { data: services, isLoading } = useQuery('services', () => fetch('https://doctor-portal-6063.up.railway.app/service').then(res => res.json()))
 
     /**
      * 3 ways to store images
@@ -40,7 +40,7 @@ const AddDoctor = () => {
                     }
                     console.log(doctor);
                     // send to your database
-                    const url = 'http://localhost:5000/doctor';
+                    const url = 'https://doctor-portal-6063.up.railway.app/doctor';
                     fetch(url, {
                         method: "POST",
                         headers: {

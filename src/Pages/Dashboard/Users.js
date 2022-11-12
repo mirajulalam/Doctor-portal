@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import UserRow from './UserRow';
 
 const Users = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://agile-escarpment-54026.herokuapp.com/user', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://doctor-portal-6063.up.railway.app/user', {
         method: "GET",
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -43,5 +43,6 @@ const Users = () => {
         </div>
     );
 };
+
 
 export default Users;
